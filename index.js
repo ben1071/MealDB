@@ -68,6 +68,31 @@ document
     }
   });
 
+// Instructions
+function displayInstructions(result1) {
+  let html = "";
+  html = `
+    <div class="meal-name">
+      <h3>${result1.meals[0].strMeal}</h3>
+    </div>
+    <div class="meal-category">
+      <h3>${result1.meals[0].strCategory}</h3>
+    </div>
+    <div class="meal-instructions">
+      <h3>${result1.meals[0].strInstructions}</h3>
+    </div>
+    <div class="meal-image">
+      <img src="${result1.meals[0].strMealThumb}" class="card-img-top" alt="...">
+    </div>
+    <div class="recepie-video">
+      <a href="${result1.meals[0].strYoutube}" target = "_blank">Watch Video</a>
+    </div>`;
+  document.getElementById("meal-description").innerHTML = html;
+  document
+    .getElementById("meal-description")
+    .parentElement.classList.add("showThis");
+}
+
 //Hide meal-instruction box.
 document.getElementById("closeBox").addEventListener("click", function () {
   document
